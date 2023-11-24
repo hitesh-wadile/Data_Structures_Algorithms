@@ -3,18 +3,20 @@ public:
     bool isPalindrome(int x) {
         long long int num = x;
         long long int res =0;
+        int rem;
         if(x<0){
             return false;
         }
 
-        while(x){
-            res = res * 10 + x%10;
-            x /= 10;
+        while(num > 0){
+            rem = num%10;
+            num = num / 10;
+
+            if((res+rem)>INT_MAX/10) return false;
+
+            res = res*10 + rem;
         }
-
-        if(num == res) return true;
-        return false;
-
+        return (x==res);
 
     }
 };
