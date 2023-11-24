@@ -5,8 +5,8 @@ public:
         if(x<0){
             return false;
         }
-        long long int num = x;
-        long long int res =0;
+        int num = x;
+        int res =0;
         int rem;
 
         while(num > 0){
